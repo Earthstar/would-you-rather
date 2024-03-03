@@ -1,0 +1,9 @@
+[{
+  "first": "Drive to work?",
+  "second": "Drive to the movie theater?",
+  "percentChoosingFirst": 40
+}, {
+  "first": "foo?",
+  "second": "bar?",
+  "percentChoosingFirst": 98
+}]

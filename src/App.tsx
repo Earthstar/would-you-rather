@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TextChoice from "./TextChoice";
 
 function App() {
   return (
@@ -10,6 +11,11 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <TextChoice choice={{
+          first: "lorem ipsum",
+          second: "dolor si amet",
+          percentChoosingFirst: 50
+        }}/>
         <a
           className="App-link"
           href="https://reactjs.org"
