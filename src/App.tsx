@@ -2,15 +2,12 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import ChoicePage from "./components/ChoicePage";
+import {Outlet} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <ChoicePage
-        first="lorem ipsum"
-        second="dolor si amit"
-        percentChoosingFirst={40}
-      ></ChoicePage>
+      <Outlet/>
     </div>
   );
 }

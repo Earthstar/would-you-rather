@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Choice } from "../types";
 import TextChoice from "./TextChoice";
+import {useLoaderData} from "react-router-dom";
 
 export interface ChoicePercentBarProps {
   value: number;
@@ -14,19 +15,28 @@ function ChoicePercentBar(percent: ChoicePercentBarProps) {
   );
 }
 
-export default function ChoicePage(choice: Choice) {
+export interface ChoicePageParams {
+  first: string;
+  second: string;
+  percentChoosingFirst: number;
+  isLast?: boolean;
+}
+
+export default function ChoicePage(choicePageParams: ChoicePageParams) {
+  const {first, second, percentChoosingFirst} = useLoaderData() as Choice;
+  console.log(first)
   const [showPercent, setShowPercent] = useState(false);
   return (
     <>
       <title>Would you rather:</title>
       <TextChoice
-        text={choice.first}
+        text={choicePageParams.first}
         onClick={() => {
           setShowPercent(true);
         }}
       />
       <TextChoice
-        text={choice.second}
+        text={choicePageParams.second}
         onClick={() => {
           setShowPercent(true);
         }}
@@ -34,10 +44,10 @@ export default function ChoicePage(choice: Choice) {
       {showPercent && (
         <ChoicePercentBar
           data-testid="choicePercentBar"
-          value={choice.percentChoosingFirst}
+          value={choicePageParams.percentChoosingFirst}
         />
       )}
-        {!choice.isLast && (<button>Next</button>)}
+        {!choicePageParams.isLast && (<button>Next</button>)}
     </>
   );
 }

@@ -3,13 +3,40 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ChoicePage from "./components/ChoicePage";
+import Choices from "./choices.json"
+import {Choice} from "./types";
+
+function getChoices() {
+  return Choices as Choice[];
+}
+
+
+// @ts-ignore
+function getChoiceLoader({params}) {
+  const choiceId = params.choiceId as number;
+  return getChoices()[choiceId] as Choice;
+}
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-    },
+  {
+    path: "/",
+    element: <App />,
+      children: [
+        {
+          path: "choices/:choiceId",
+          element: (
+            <ChoicePage
+              first="lorem ipsum"
+              second="dolor si amit"
+              percentChoosingFirst={40}
+            />
+          ),
+          loader: getChoiceLoader,
+        }
+      ]
+  },
 ]);
 
 const root = ReactDOM.createRoot(
@@ -17,7 +44,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );
 
