@@ -37,7 +37,7 @@ export default function ChoicePage(choice: Choice) {
           value={choice.percentChoosingFirst}
         />
       )}
-      <button>Next</button>
+        {!choice.isLast && (<button>Next</button>)}
     </>
   );
 }
