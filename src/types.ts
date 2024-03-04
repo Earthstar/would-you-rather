@@ -1,5 +1,5 @@
 export interface Choice {
-    first: string;
-    second: string;
-    percentChoosingFirst: number;
+  first: string;
+  second: string;
+  percentChoosingFirst: number;
 }
