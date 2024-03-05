@@ -38,7 +38,7 @@ describe("getChoicePageParams", () => {
 
   it("generates a URL to the next page", () => {
     const choicePageParams = getChoicePageParams(getTestChoices(), 0)
-    expect(choicePageParams.nextUrl).toBe("choices/1")
+    expect(choicePageParams.nextUrl).toBe("/choices/1")
   })
 
   it("does not generate a nextUrl if it is the last page", () => {

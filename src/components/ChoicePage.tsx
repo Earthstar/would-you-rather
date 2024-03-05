@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Choice } from "../types";
 import TextChoice from "./TextChoice";
-import {useLoaderData} from "react-router-dom";
+import {Link, useLoaderData} from "react-router-dom";
 
 export interface ChoicePercentBarProps {
   value: number;
@@ -40,7 +40,7 @@ export function getChoicePageParams(choices: Choice[], id: number): ChoicePagePa
   }
 
   if (id < choices.length - 1) {
-    choicePageParams.nextUrl = `choices/${id + 1}`
+    choicePageParams.nextUrl = `/choices/${id + 1}`
   }
   return choicePageParams;
 }
@@ -79,7 +79,7 @@ export default function ChoicePage(choicePageParams: ChoicePageParams) {
           value={choicePageParams.percentChoosingFirst}
         />
       )}
-        {!choicePageParams.isLast && (<button>Next</button>)}
+      {choicePageParams.nextUrl && (<button><Link to={choicePageParams.nextUrl}>Next</Link></button>)}
     </>
   );
 }
