@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ChoicePage from "./components/ChoicePage";
+import ChoicePage, {getChoicePageParams} from "./components/ChoicePage";
 import Choices from "./choices.json"
 import {Choice} from "./types";
 
@@ -13,10 +13,14 @@ function getChoices() {
 }
 
 
+
 // @ts-ignore
 function getChoiceLoader({params}) {
+  // we have two pieces of information we need to convey
+  // what is the id of the choice
+  // and whether this is the "last" choice
   const choiceId = params.choiceId as number;
-  return getChoices()[choiceId] as Choice;
+  return getChoicePageParams(getChoices(), choiceId);
 }
 
 const router = createBrowserRouter([
