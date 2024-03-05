@@ -20,7 +20,6 @@ export interface ChoicePageParams {
   first: string;
   second: string;
   percentChoosingFirst: number;
-  isLast?: boolean;
   nextUrl?: string;
 }
 
@@ -35,8 +34,7 @@ export function getChoicePageParams(choices: Choice[], id: number): ChoicePagePa
   let choicePageParams: ChoicePageParams = {
     first,
     second,
-    percentChoosingFirst,
-    isLast: id === choices.length - 1
+    percentChoosingFirst
   }
 
   if (id < choices.length - 1) {
