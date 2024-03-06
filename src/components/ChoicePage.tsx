@@ -57,27 +57,31 @@ export function ChoicePageDataWrapper() {
 export default function ChoicePage(choicePageParams: ChoicePageParams) {
   const [showPercent, setShowPercent] = useState(false);
   return (
-    <>
-      <title>Would you rather:</title>
-      <TextChoice
-        text={choicePageParams.first}
-        onClick={() => {
-          setShowPercent(true);
-        }}
-      />
-      <TextChoice
-        text={choicePageParams.second}
-        onClick={() => {
-          setShowPercent(true);
-        }}
-      />
-      {showPercent && (
-        <ChoicePercentBar
-          data-testid="choicePercentBar"
-          value={choicePageParams.percentChoosingFirst}
+    <div>
+      <h1 className="text-center text-6xl">Would you rather:</h1>
+      <div className="flex flex-row place-content-around">
+        <TextChoice
+          text={choicePageParams.first}
+          onClick={() => {
+            setShowPercent(true);
+          }}
         />
+        <TextChoice
+          text={choicePageParams.second}
+          onClick={() => {
+            setShowPercent(true);
+          }}
+        />
+      </div>
+      {showPercent && (
+        <>
+          <ChoicePercentBar
+            data-testid="choicePercentBar"
+            value={choicePageParams.percentChoosingFirst}
+          />
+          {choicePageParams.nextUrl && (<button><Link to={choicePageParams.nextUrl}>Next</Link></button>)}
+        </>
       )}
-      {choicePageParams.nextUrl && (<button><Link to={choicePageParams.nextUrl}>Next</Link></button>)}
-    </>
+    </div>
   );
 }
