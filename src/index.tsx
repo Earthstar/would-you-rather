@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import './assets/main.css'
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ChoicePage, {ChoicePageDataWrapper, getChoicePageParams} from "./components/ChoicePage";
+import {ChoicePageDataWrapper, getChoicePageParams} from "./components/ChoicePage";
 import Choices from "./choices.json"
 import {Choice} from "./types";
 
 function getChoices() {
   return Choices as Choice[];
 }
-
-
 
 // @ts-ignore
 function getChoiceLoader({params}) {
