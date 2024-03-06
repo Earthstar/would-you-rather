@@ -58,7 +58,7 @@ export default function ChoicePage(choicePageParams: ChoicePageParams) {
   const [showPercent, setShowPercent] = useState(false);
   return (
     <div>
-      <h1 className="text-center text-6xl">Would you rather:</h1>
+      <h1 className="m-8 text-center text-6xl text-slate-50">Would you rather</h1>
       <div className="flex flex-row place-content-around">
         <TextChoice
           text={choicePageParams.first}

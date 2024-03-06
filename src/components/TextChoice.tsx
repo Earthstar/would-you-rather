@@ -8,9 +8,10 @@ export interface TextChoiceProps {
 
 export default function TextChoice(question: TextChoiceProps) {
   return (
-    <div className="border-2 rounded">
-      <p>{question.text}</p>
-      <button data-testid="choice-button" onClick={question.onClick}>Press me!</button>
-    </div>
+    <>
+    <button onClick={question.onClick} className="flex flex-col justify-center m-8 border-2 rounded-lg bg-green-700">
+      <p className="p-8 text-slate-50">{question.text}</p>
+    </button>
+    </>
   );
 }
