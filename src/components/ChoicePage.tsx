@@ -87,14 +87,19 @@ export default function ChoicePage(choicePageParams: ChoicePageParams) {
             value={choicePageParams.percentChoosingFirst}
           />
           {choicePageParams.nextUrl &&
-            (<button className="flex m-8 justify-center text-slate-50 rounded-lg bg-green-700 text-3xl"
+            (<Link
+              className="flex m-8 justify-center text-slate-50 rounded-lg bg-green-700 text-3xl"
+              to={choicePageParams.nextUrl}
               onClick={() => {
                 setShowPercent(false);
               }}
             >
-              <span className="p-8 place-content-center"><Link to={choicePageParams.nextUrl}>Next</Link></span>
-
-          </button>)}
+              <button className="p-8 place-content-center">
+              Next
+            </button></Link>)}
+          {!choicePageParams.nextUrl && (
+            <p>Thank you for your feedback. Your choices have been recorded.</p>
+          )}
         </>
       )}
     </div>
