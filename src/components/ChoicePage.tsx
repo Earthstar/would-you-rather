@@ -8,9 +8,16 @@ export interface ChoicePercentBarProps {
 }
 function ChoicePercentBar(percent: ChoicePercentBarProps) {
   return (
-    <div>
-      <div>{percent.value}% people picked one</div>
-      <div>{100 - percent.value}% people picked two</div>
+    <div className="w-96 place-self-center">
+      <div className="percent-info flex flex-row justify-between">
+        <div className="">{percent.value}%</div>
+        <div className="">{100 - percent.value}%</div>
+      </div>
+      <div className="percent-bar h-5 bg-red-600 w-full">
+        <div className="h-5 bg-green-600" style={{
+          width: `${percent.value}%`
+        }}></div>
+      </div>
     </div>
   );
 }
@@ -57,7 +64,7 @@ export function ChoicePageDataWrapper() {
 export default function ChoicePage(choicePageParams: ChoicePageParams) {
   const [showPercent, setShowPercent] = useState(false);
   return (
-    <div>
+    <div className="flex flex-col place-content-around">
       <h1 className="m-8 text-center text-6xl text-slate-50">Would you rather</h1>
       <div className="flex flex-row place-content-around">
         <TextChoice
@@ -79,7 +86,11 @@ export default function ChoicePage(choicePageParams: ChoicePageParams) {
             data-testid="choicePercentBar"
             value={choicePageParams.percentChoosingFirst}
           />
-          {choicePageParams.nextUrl && (<button><Link to={choicePageParams.nextUrl}>Next</Link></button>)}
+          {choicePageParams.nextUrl &&
+            (<button className="flex m-8 justify-center text-slate-50 rounded-lg bg-green-700 text-3xl">
+              <span className="p-8 place-content-center"><Link  to={choicePageParams.nextUrl}>Next</Link></span>
+
+          </button>)}
         </>
       )}
     </div>
