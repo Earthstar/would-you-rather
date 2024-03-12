@@ -17,7 +17,12 @@
   {
     "first": "Hit the deer?",
     "second": "Swerve into the trees?",
-    "percentChoosingFirst": 4
+    "percentChoosingFirst": 53
+  },
+  {
+    "first": "Walk towards the city?",
+    "second": "Walk towards the hospital?",
+    "percentChoosingFirst": 43
   },
   {
     "first": "Join the migrants?",
