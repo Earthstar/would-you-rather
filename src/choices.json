@@ -2,11 +2,46 @@
   {
     "first": "Drive to work?",
     "second": "Drive to the movie theater?",
-    "percentChoosingFirst": 40
+    "percentChoosingFirst": 56
   },
   {
-    "first": "foo?",
-    "second": "bar?",
-    "percentChoosingFirst": 98
+    "first": "Take the highway?",
+    "second": "Take the backroads?",
+    "percentChoosingFirst": 84
+  },
+  {
+    "first": "Listen to the radio?",
+    "second": "Drive in silence?",
+    "percentChoosingFirst": 71
+  },
+  {
+    "first": "Hit the deer?",
+    "second": "Swerve into the trees?",
+    "percentChoosingFirst": 4
+  },
+  {
+    "first": "Join the migrants?",
+    "second": "Walk alone?",
+    "percentChoosingFirst": 18
+  },
+  {
+    "first": "Take the baby?",
+    "second": "Abandon it?",
+    "percentChoosingFirst": 89
+  },
+  {
+    "first": "Be swallowed by the earth?",
+    "second": "Be sucked into the sky?",
+    "percentChoosingFirst": 60
+  },
+  {
+    "first": "Hardened scales creep from your belly button, wrapping around your waist like a reptillian corset before crawling towards your legs and arms, locking your joints in a sculpture of impotent terror until it reaches your mouth, frozen in a silent scream, an opaque membrane blinding your eyes, your solidified skin now trapping you in a shell; then your final breath dissolves in your chest cavity as your internal organs liquify, your beating heart agitating the gelatinous soup that your body has become--you are not even a person anymore, just a sack of aminos--that now reassemble into the bones of new limbs, but far too many of them, layered with raw nerves that burn as if your new skin was stabbed by a thousand needles; your new limbs twitch reflexively and you burst out of your own skin, the hot ash falling onto your tender flesh; you open your eyes and the world is a confused tesselation--you have so many eyes now, each scraped by their unfortunate bed of feathers; you crawl forward on winged limbs that are too weak to hold you in gravity, your ventral eyes scraping the dirt while your dorsal eyes are blinded by the searing light the world has become?",
+    "second": "Catch the eye of an overwhelming intellect, it opening your skull to brush away your conscious thoughts of fear and revulsion like so many cobwebs; you are overwhelmed by the taste of your last meal, the warmth of another's body, your first kiss hot on your lips, the blooming bright confusion of your first steps outside the house, the heartbeat of the womb, each memory revisited as an experience before being burned away like so much trash; the neurosis, fears, joys that make one human wiped out like stains on a countertop by an indifferent thumb, until your soul is a homogenous mass of raw clay; and then reshaped, new prime directives installed to yearn for gleek and recoil from karumph and the sol ef yeir beeng sholl be to ebuy thu cemmonds ef yeir mostur, phontem lambs thot stravu fer thu huovuns, yeir himon threot centertang te sang phrosus thot hovu ne muonang an uorthly tengius ond yut yei oru cempullud te gavu veacu te thu olaun umetaens yei new anhobat, cencupts thot hovu ne kun fer o cruotiru shopud byu uvelitaen?",
+    "percentChoosingFirst": 50
+  },
+  {
+    "first": "Live?",
+    "second": "Die?",
+    "percentChoosingFirst": 0.000001
   }
 ]
