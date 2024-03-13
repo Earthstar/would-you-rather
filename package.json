@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run build:css && react-scripts build",
+    "build": "npm run build:css && react-scripts build && rm -rf docs && mv ./build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch:css": "npx tailwindcss -i ./src/assets/tailwind.css -o ./src/assets/main.css --watch",
@@ -60,5 +60,6 @@
     "autoprefixer": "^9.8.6",
     "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.1"
-  }
+  },
+  "homepage": "https://earthstar.github.io/would-you-rather/"
 }
