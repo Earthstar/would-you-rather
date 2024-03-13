@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {ChoicePageDataWrapper, getChoicePageParams} from "./components/ChoicePage";
 import Choices from "./choices.json"
 import {Choice} from "./types";
+import ErrorPage from "./error";
 
 function getChoices() {
   return Choices as Choice[];
@@ -25,16 +26,15 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-      children: [
-        {
-          path: "choices/:choiceId",
-          element: (
-            <ChoicePageDataWrapper/>
-          ),
-          loader: getChoiceLoader,
-        }
-      ]
+    errorElement: <ErrorPage/>,
   },
+  {
+    path: "choices/:choiceId",
+    element: (
+      <ChoicePageDataWrapper/>
+    ),
+    loader: getChoiceLoader,
+  }
 ]);
 
 const root = ReactDOM.createRoot(

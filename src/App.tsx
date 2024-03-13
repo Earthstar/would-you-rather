@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 // import "./App.css";
-import {Outlet} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate("/choices/0")
+  })
   return (
     <div className="App">
-      <Outlet/>
     </div>
   );
 }
