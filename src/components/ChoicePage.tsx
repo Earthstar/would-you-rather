@@ -13,7 +13,6 @@ function ChoicePercentBar(percent: ChoicePercentBarProps) {
         <div className="">{percent.value}%</div>
         <div className="">{100 - percent.value}%</div>
       </div>
-      {/* hack: bg-red-500 is needed for the TextChoice css */}
       <div className="percent-bar h-5 bg-green-500 w-full">
         <div className="h-5 bg-blue-700" style={{
           width: `${percent.value}%`
@@ -74,14 +73,16 @@ export default function ChoicePage(choicePageParams: ChoicePageParams) {
           onClick={() => {
             setShowPercent(true);
           }}
-          color="blue"
+          color="bg-blue-700"
+          hoverColor="hover:bg-blue-500"
         />
         <TextChoice
           text={choicePageParams.second}
           onClick={() => {
             setShowPercent(true);
           }}
-          color="green"
+          color="bg-green-700"
+          hoverColor="hover:bg-green-500"
         />
       </div>
       {showPercent && (
