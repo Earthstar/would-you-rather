@@ -24,14 +24,14 @@ function ChoicePercentBar(percent: ChoicePercentBarProps) {
 }
 
 // TODO: use typescript meta types to merge with Choice
-export interface ChoicePageParams {
+export interface ChoicePageProps {
   first: string;
   second: string;
   percentChoosingFirst: number;
   nextUrl?: string;
 }
 
-export function getChoicePageParams(choices: Choice[], id: number): ChoicePageParams {
+export function getChoicePageParams(choices: Choice[], id: number): ChoicePageProps {
   const {first, second, percentChoosingFirst} = choices[id];
   let nextUrl;
   if (id < choices.length - 1) {
@@ -39,7 +39,7 @@ export function getChoicePageParams(choices: Choice[], id: number): ChoicePagePa
   } else {
     nextUrl = null;
   }
-  let choicePageParams: ChoicePageParams = {
+  let choicePageParams: ChoicePageProps = {
     first,
     second,
     percentChoosingFirst
@@ -52,7 +52,7 @@ export function getChoicePageParams(choices: Choice[], id: number): ChoicePagePa
 }
 
 export function ChoicePageDataWrapper() {
-  const choicePageParams = useLoaderData() as ChoicePageParams;
+  const choicePageParams = useLoaderData() as ChoicePageProps;
 
   return (
     <>
@@ -62,7 +62,7 @@ export function ChoicePageDataWrapper() {
 }
 
 // useParams - gets the URL params in the component
-export default function ChoicePage(choicePageParams: ChoicePageParams) {
+export default function ChoicePage(choicePageParams: ChoicePageProps) {
   // TODO: manage which button was clicked
   // only one button can be clicked at any time
   const [buttonClicked, setButtonClicked] = useState<number | null>(null)
