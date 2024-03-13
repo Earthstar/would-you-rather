@@ -73,16 +73,14 @@ export default function ChoicePage(choicePageParams: ChoicePageParams) {
           onClick={() => {
             setShowPercent(true);
           }}
-          color="bg-blue-700"
-          hoverColor="hover:bg-blue-500"
+          palette={0}
         />
         <TextChoice
           text={choicePageParams.second}
           onClick={() => {
             setShowPercent(true);
           }}
-          color="bg-green-700"
-          hoverColor="hover:bg-green-500"
+          palette={1}
         />
       </div>
       {showPercent && (
