@@ -63,7 +63,9 @@ export function ChoicePageDataWrapper() {
 
 // useParams - gets the URL params in the component
 export default function ChoicePage(choicePageParams: ChoicePageParams) {
-  const [showPercent, setShowPercent] = useState(false);
+  // TODO: manage which button was clicked
+  // only one button can be clicked at any time
+  const [buttonClicked, setButtonClicked] = useState<number | null>(null)
   return (
     <div className="flex flex-col place-content-around">
       <h1 className="m-8 text-center text-6xl text-slate-950">Would you rather</h1>
@@ -71,19 +73,25 @@ export default function ChoicePage(choicePageParams: ChoicePageParams) {
         <TextChoice
           text={choicePageParams.first}
           onClick={() => {
-            setShowPercent(true);
+            if (buttonClicked === null) {
+              setButtonClicked(0)
+            }
           }}
           palette={0}
+          selected={buttonClicked === 0}
         />
         <TextChoice
           text={choicePageParams.second}
           onClick={() => {
-            setShowPercent(true);
+            if (buttonClicked === null) {
+              setButtonClicked(1)
+            }
           }}
           palette={1}
+          selected={buttonClicked === 1}
         />
       </div>
-      {showPercent && (
+      {buttonClicked !== null && (
         <>
           <ChoicePercentBar
             data-testid="choicePercentBar"
@@ -94,7 +102,7 @@ export default function ChoicePage(choicePageParams: ChoicePageParams) {
               className="flex m-8 justify-center text-slate-50 rounded-lg bg-red-700 hover:bg-red-600 text-3xl"
               to={choicePageParams.nextUrl}
               onClick={() => {
-                setShowPercent(false);
+                setButtonClicked(null)
               }}
             >
               <button className="p-8 place-content-center">
